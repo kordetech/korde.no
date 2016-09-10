@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAAW;EACT,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,IAAI;EACZ,IAAI,EAAE,CAAC",
+"sources": ["../scss/localmain.scss"],
+"names": [],
+"file": "localmain.css"
+}

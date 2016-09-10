@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block content %}
+    <div class="bg-clouds">
+    <div class="row row-center row-center-v h-full">
+        <div class="t-center">
+            {% placeholder image %}
+        </div>
+    </div>
+    <div class="row row-center row-center-v h-full p-l-20-20 fs-14">
+        <div class="w-1000 p-l-20-0">
+            {% placeholder first %}
+        </div>
+    </div>
+    <div class="row row-center row-center-v h-full p-l-20-20 fs-14">
+        <div class="w-1000 p-l-20-0">
+            {% placeholder second %}
+        </div>
+    </div>
+    <div class="row row-center row-center-v h-full p-l-20-20 fs-14">
+        <div class="w-1000 p-l-20-0">
+            {% placeholder third %}
+        </div>
+    </div>
+    <div class="row row-center row-center-v h-full p-l-20-20 fs-14">
+        <div class="w-1000 p-l-20-0">
+            {% placeholder fourth %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
