@@ -9,12 +9,19 @@
     {% placeholder 'header-background' %}
 {% endwith %}
 
-<div id="header" class="row row-center row-center-v h-400 bg-image">
-
-    <div class="row row-center row-center-v h-full p-l-20-20 fs-14">
-        <div class="w-1000 p-l-20-0">
-            {% placeholder fourth %}
+    <div id="header" class="row row-center row-center-v p-l-20-20 h-600 bg-image">
+        <div class="w-600 t-center">
+            {% placeholder korde-logo %}
         </div>
     </div>
-</div>
+    <div class="row row-center p-l-40-20">
+        <div class="w-1100">
+            <div class="row">
+                <div class="p-l-5-0 w-300 border-b-3 border-red">
+                    <h4>Siste nyheter</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock content %}
