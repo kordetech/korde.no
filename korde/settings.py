@@ -228,5 +228,3 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters'
 )
 
-# Aldryn Blog
-ALDRYN_BOILERPLATE_NAME = 'bootstrap3'
