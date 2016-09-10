@@ -155,6 +155,7 @@ INSTALLED_APPS = [
     'parler',
     'sortedm2m',
     'taggit',
+    'cmsplugin_css_background',
 
     # Our own
     'korde'
@@ -194,6 +195,7 @@ CMS_LANGUAGES = {
 CMS_TEMPLATES = (
     ## Customize this
     ('test.html', 'Test'),
+    ('home.html', 'Home'),
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right')
