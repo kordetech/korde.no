@@ -5,7 +5,7 @@
 
 {% block content %}
 
-{% with css_selector='#header' %}
+{% with css_selector='#header, #blog-image' %}
     {% placeholder 'header-background' %}
 {% endwith %}
 
@@ -14,11 +14,61 @@
             {% placeholder korde-logo %}
         </div>
     </div>
-    <div class="row row-center p-l-40-20">
-        <div class="w-1100">
+    <div class="row row-center bg-stable-light border-b-1 border-stable p-l-40-20">
+        <div class="w-1200">
             <div class="row">
                 <div class="p-l-5-0 w-300 border-b-3 border-red">
-                    <h4>Siste nyheter</h4>
+                    <h4>Siste innlegg</h4>
+                </div>
+            </div>
+            <div class="row row-center p-l-20-0">
+                <div class="w-380 bg-light card m-l-10-10">
+                    <div id="blog-image" class="w-100-p h-150 bg-image"></div>
+                    <div class="p-l-20-20 border-b-1 border-stable">
+                        <h5>Lorem ipsum</h5>
+                        <p class="m-l-20-0 m-bottom"><small>Skrevet av: Valdemar Rolfsen</small></p>
+                        <p class="fs-12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam porttitor ligula est, eget aliquam dolor consectetur sed. Quisque nec justo ipsum. Ut lobortis sed orci id semper. In vehicula efficitur dignissim. Sed in enim ac lacus ullamcorper pulvinar vitae id odio. Nulla faucibus dignissim felis, ut sagittis leo posuere in.</p>
+                    </div>
+                    <div class="p-l-15-10 t-center fs-14">
+                        <span class="fa fa-facebook m-l-0-20 color-stable social-hover"></span>
+                        <span class="fa fa-twitter m-l-0-20 color-stable social-hover"></span>
+                        <span class="fa fa-linkedin m-l-0-20 color-stable social-hover"></span>
+                    </div>
+                </div>
+                <div class="w-380 bg-light card p-l-20-20 m-l-10-10">
+                    <h5>Lorem ipsum</h5>
+                </div>
+                <div class="w-380 bg-light card p-l-20-20 m-l-10-10">
+                    <h5>Lorem ipsum</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-center border-b-1 border-stable p-l-40-20">
+        <div class="w-1200">
+            <div class="row">
+                <div class="p-l-5-0 w-300 border-b-3 border-red">
+                    <h4>Hva vi tillbyr</h4>
+                </div>
+            </div>
+            <div class="row row-center p-l-20-0">
+                <div class="c-m-4 p-l-20-20 t-center">
+                    <div class="round round-lg bg-blue"></div>
+                    <div class="t-left m-l-20-0 fs-12">
+                        {% placeholder consulting-description %}
+                    </div>
+                </div>
+                <div class="c-m-4 p-l-20-20 t-center">
+                    <div class="round round-lg bg-blue"></div>
+                    <div class="t-left m-l-20-0 fs-12">
+                        {% placeholder consulting-description %}
+                    </div>
+                </div>
+                <div class="c-m-4 p-l-20-20 t-center">
+                    <div class="round round-lg bg-blue"></div>
+                    <div class="t-left m-l-20-0 fs-12">
+                        {% placeholder consulting-description %}
+                    </div>
                 </div>
             </div>
         </div>
