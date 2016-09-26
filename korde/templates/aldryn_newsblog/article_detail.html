@@ -1,22 +1,49 @@
-{% extends "aldryn_newsblog/base.html" %}
-{% load i18n cms_tags apphooks_config_tags %}
+{% extends "base.html" %}
+{% load i18n cms_tags thumbnail apphooks_config_tags %}
 
 {% block title %}
     {{ article.title }} - {{ block.super }}
 {% endblock %}
 
-{% block newsblog_content %}
-    {% include "aldryn_newsblog/includes/article.html" with detail_view="true" %}
+{% block content %}
+    <style>
+        p {
+            font-size: 1.4em;
+        }
 
-    {% static_placeholder "newsblog_social" %}
+        #header, #author {
+            background-size: cover;
+        }
+    </style>
 
-    <ul>
-        {% if prev_article %}
-            <li><a href="{{ prev_article.get_absolute_url }}">{% trans "Previous Article" %}</a></li>
-        {% endif %}
-        <li><a href="{% namespace_url "article-list" %}">{% trans "Back to Overview" %}</a></li>
-        {% if next_article %}
-            <li><a href="{{ next_article.get_absolute_url }}">{% trans "Next Article" %}</a></li>
-        {% endif %}
-    </ul>
-{% endblock %}
+    <div class="row row-center fill-height bg-stable-light border-b-1 border-stable p-l-100-20">
+        <div class="w-1000">
+            <div class="card bg-light">
+                <div>
+                    {% thumbnail article.featured_image 0x1000 crop subject_location=article.featured_image.subject_location as thumb %}
+                    <div class="w-100-p h-500 p-l-20-20" id="header" style="background-image: url({{ thumb.url }})">
+                        <button class="btn-md btn-red rounded-3">
+                            <span class="fa fa-caret-left m-l-0-10 m-right"></span>
+                            <span><a href="{% namespace_url "article-list" %}">Tilbake</a></span>
+                        </button>
+                    </div>
+                    {% thumbnail article.author.visual 150x150 crop subject_location=article.author.visual.subject_location as author_thumb %}
+                    <div style="background-image: url({{ author_thumb.url }})" id="author" class="round round-md border-8 border-light right-shadow author"></div>
+                </div>
+                <div class="p-l-80-60">
+                    <h1>{% render_model article "title" %}</h1>
+                    <div>
+                        <i>{% render_model article "lead_in" %}</i>
+                    </div>
+                    <div class="p-l-10-0">
+                        {% render_placeholder article.content language placeholder_language %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+

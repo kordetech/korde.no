@@ -9,7 +9,7 @@
         {% for article in article_list %}
             <div class="w-380 bg-light card m-l-10-10">
             <div id="blog-image" class="w-100-p h-150 bg-image">
-                <img src="{% thumbnail article.featured_image 380x150 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+                <img width="380" height="150" src="{% thumbnail article.featured_image 760x300 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
             </div>
             <div class="p-l-20-20 border-b-1 border-stable">
                 <h5><a href="{{ article.get_absolute_url }}">{% render_model article "title" %}</a></h5>
