@@ -196,6 +196,10 @@ CMS_TEMPLATES = (
     ## Customize this
     ('test.html', 'Test'),
     ('home.html', 'Home'),
+    ('customers.html', 'Customers'),
+    ('about.html', 'About'),
+    ('detail.html', 'Detail'),
+    ('contact.html', 'Contact'),
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right')

@@ -1,0 +1,47 @@
+{% extends "with-header.html" %}
+{% load cms_tags %}
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+
+{% block more-content %}
+
+    <div class="row row-center border-b-1 border-stable bg-stable-light p-l-100-20 p-s-40-20">
+        <div class="w-1200">
+            <div class="row row-center-v">
+                <div class="c-m-6 p-l-20-20">
+                    <h3>{% placeholder 'first-header' %}</h3>
+                    <p class="fs-14">{% placeholder 'first-content' %}</p>
+                </div>
+                <div class="c-m-6 t-center">
+                    {% placeholder 'first-image' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row row-center border-b-1 border-stable p-l-100-20 p-s-40-20">
+        <div class="w-1200">
+            <div class="row row-center-v">
+                <div class="c-m-12 p-l-20-20 t-center">
+                    <h4>{% placeholder 'second-header' %}</h4>
+                    <p class="fs-14">{% placeholder 'second-content' %}</p>
+                </div>
+            </div>
+            <div class="row row-center-v p-l-40-100 p-s-20-20">
+                <div class="c-m-3 t-center">
+                    <h2><span class="fa fa-facebook"></span></h2>
+                </div>
+                <div class="c-m-3 t-center">
+                    <h2><span class="fa fa-instagram"></span></h2>
+                </div>
+                <div class="c-m-3 t-center">
+                    <h2><span class="fa fa-linkedin"></span></h2>
+                </div>
+                <div class="c-m-3 t-center">
+                    <h2><span class="fa fa-twitter"></span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock more-content %}

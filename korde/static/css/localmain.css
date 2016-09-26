@@ -1,7 +1,17 @@
+
+img {
+  max-width: 100%;
+}
+
 .down-icon {
   position: absolute;
   bottom: 20px;
   left: 0; }
+
+
+.fill-height {
+  min-height: 100vh;
+}
 
 .card {
   box-shadow: 0 1px 3px rgba(0,0,0, 0.12);
@@ -20,14 +30,58 @@
   Korde images
 */
 
+.author {
+  position: absolute;
+  bottom: -75px;
+  left: 75px;
+}
+
 .round {
   border-radius: 100%;
   display: inline-block;
 }
 
+.round-md {
+  width: 150px;
+  height: 150px;
+}
+
 .round-lg {
   width: 300px;
   height: 300px;
+}
+
+.header-container {
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.header-font {
+  font-family: 'Great Vibes', cursive;
+}
+
+.header-content-bg {
+  background: rgb(35, 49, 117);
+  color: #fff;
+}
+
+.header-lines {
+  border-color: rgb(29, 173, 198);
+}
+
+.img-container img {
+  margin-bottom: -5px;
+}
+
+/* Customers */
+.mojob-bg {
+  background: #46bbb3;
+  color: #fff;
+}
+
+.jobbr-bg {
+  background: #1bbc9b;
+  color: #fff;
 }
 
 /*# sourceMappingURL=localmain.css.map */

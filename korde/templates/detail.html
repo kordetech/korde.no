@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block content %}
+
+    {% with css_selector='#header' %}
+        {% placeholder 'header-background' %}
+    {% endwith %}
+
+    {% with css_selector='#author' %}
+        {% placeholder 'author-background' %}
+    {% endwith %}
+
+    <style>
+        p {
+            font-size: 1.4em;
+        }
+
+        #header, #author {
+            background-size: cover;
+        }
+    </style>
+
+    <div class="row row-center fill-height bg-stable-light border-b-1 border-stable p-l-100-20">
+        <div class="w-1000">
+            <div class="card bg-light">
+                <div>
+                    <div class="w-100-p h-500 p-l-20-20" id="header">
+                        <button class="btn-md btn-red rounded-3">
+                            <span class="fa fa-caret-left m-l-0-10 m-right"></span>
+                            <span>Tilbake</span>
+                        </button>
+                    </div>
+                    <div id="author" class="round round-md border-8 border-light right-shadow author"></div>
+                </div>
+                <div class="p-l-80-60">
+                    {% placeholder 'content' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
