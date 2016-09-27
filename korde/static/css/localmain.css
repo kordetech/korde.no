@@ -84,4 +84,13 @@ img {
   color: #fff;
 }
 
+.hover-button {
+
+  transition: box-shadow 400ms linear;
+}
+
+.hover-button:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
 /*# sourceMappingURL=localmain.css.map */

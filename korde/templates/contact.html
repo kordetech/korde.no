@@ -1,14 +1,13 @@
-{% extends "base.html" %}
+{% extends "with-header.html" %}
 {% load cms_tags %}
 
-{% block content %}
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
 
-    <div class="row row-center p-l-120-20 p-top t-center">
-        <h2 class="t-300">La oss skape noe <span class="header-font fs-20 color-red">fantastisk</span> sammen</h2>
-    </div>
-    <div class="row row-center p-l-40-20">
+{% block more-content %}
+
+    <div class="row row-center p-l-120-20">
         <div class="w-600">
-            <h3 class="t-center t-300">Ta kontakt</h3>
+            <h3 class="t-center t-300">Kontaktskjema</h3>
             <form class="fs-16">
                 <input type="text" class="input input-bottom-red m-l-15-0" placeholder="Ditt navn">
                 <div class="row">
@@ -21,10 +20,13 @@
                 </div>
                 <textarea class="textarea input-bottom-red m-l-15-0 h-140" placeholder="Skriv din melding her"></textarea>
                 <div class="t-right">
-
+                    <button class="btn-md btn-light hover-button rounded-3">
+                        <span class="color-red">Send inn</span>
+                        <span class="fa fa-arrow-right color-red m-l-0-10 m-left"></span>
+                    </button>
                 </div>
             </form>
         </div>
     </div>
 
-{% endblock content %}
+{% endblock more-content %}

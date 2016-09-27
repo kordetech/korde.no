@@ -22,10 +22,12 @@
                 <div>
                     {% thumbnail article.featured_image 0x1000 crop subject_location=article.featured_image.subject_location as thumb %}
                     <div class="w-100-p h-500 p-l-20-20" id="header" style="background-image: url({{ thumb.url }})">
-                        <button class="btn-md btn-red rounded-3">
-                            <span class="fa fa-caret-left m-l-0-10 m-right"></span>
-                            <span><a href="{% namespace_url "article-list" %}">Tilbake</a></span>
-                        </button>
+                        <a href="{% namespace_url "article-list" %}">
+                            <button class="btn-md btn-red rounded-3">
+                                <span class="fa fa-caret-left m-l-0-10 m-right"></span>
+                                <span>Tilbake</span>
+                            </button>
+                        </a>
                     </div>
                     {% thumbnail article.author.visual 150x150 crop subject_location=article.author.visual.subject_location as author_thumb %}
                     <div style="background-image: url({{ author_thumb.url }})" id="author" class="round round-md border-8 border-light right-shadow author"></div>

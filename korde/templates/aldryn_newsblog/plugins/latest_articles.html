@@ -7,21 +7,23 @@
     </div>
     <div class="row row-center p-l-20-0">
         {% for article in article_list %}
-            <div class="w-380 bg-light card m-l-10-10">
-            <div id="blog-image" class="w-100-p h-150 bg-image">
-                <img width="380" height="150" src="{% thumbnail article.featured_image 760x300 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
-            </div>
-            <div class="p-l-20-20 border-b-1 border-stable">
-                <h5><a href="{{ article.get_absolute_url }}">{% render_model article "title" %}</a></h5>
-                <p class="m-l-20-0 m-bottom"><small>Skrevet av: {{ article.author.name }}</small></p>
-                <p class="fs-12">{{ article.lead_in | truncatewords_html:150 }}</p>
-            </div>
-            <div class="p-l-15-10 t-center fs-14">
-                <span class="fa fa-facebook m-l-0-20 color-stable social-hover"></span>
-                <span class="fa fa-twitter m-l-0-20 color-stable social-hover"></span>
-                <span class="fa fa-linkedin m-l-0-20 color-stable social-hover"></span>
-            </div>
-        </div>
+            <a href="{{ article.get_absolute_url }}">
+                <div class="w-380 bg-light card m-l-10-10">
+                    <div id="blog-image" class="w-100-p h-150 bg-image">
+                        <img width="380" height="150" src="{% thumbnail article.featured_image 760x300 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+                    </div>
+                    <div class="p-l-20-20 border-b-1 border-stable">
+                        <h5>{% render_model article "title" %}</h5>
+                        <p class="m-l-20-0 m-bottom"><small>Skrevet av: {{ article.author.name }}</small></p>
+                        <p class="fs-12">{% render_model article "lead_in" %}</p>
+                    </div>
+                    <div class="p-l-15-10 t-center fs-14">
+                        <span class="fa fa-facebook m-l-0-20 color-stable social-hover"></span>
+                        <span class="fa fa-twitter m-l-0-20 color-stable social-hover"></span>
+                        <span class="fa fa-linkedin m-l-0-20 color-stable social-hover"></span>
+                    </div>
+                </div>
+            </a>
         {% empty %}
             <p>{% trans "No items available" %}</p>
         {% endfor %}
