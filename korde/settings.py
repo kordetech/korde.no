@@ -157,6 +157,12 @@ INSTALLED_APPS = [
     'taggit',
     'cmsplugin_css_background',
 
+    'absolute',
+    'aldryn_forms',
+    'aldryn_forms.contrib.email_notifications',
+    'captcha',
+    'emailit',
+
     # Our own
     'korde'
 ]
