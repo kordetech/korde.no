@@ -1,0 +1,22 @@
+version: '2'
+services:
+  db:
+    image: postgres
+    volumes_from:
+      - pg_data
+  web:
+    environment:
+      - DATABASE_HOST=db
+    image: kordetech/korde.no
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    links:
+      - db
+  migration:
+    environment:
+      - DATABASE_HOST=db
+    image: kordetech/korde.no
+    command: python manage.py migrate
+  pg_data:
+    image: kordetech/pg_data

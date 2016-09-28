@@ -61,3 +61,5 @@ tablib==0.11.2
 tzlocal==1.2.2
 Unidecode==0.4.19
 YURL==0.13
+
+psycopg2

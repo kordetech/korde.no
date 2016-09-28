@@ -25,10 +25,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'w!gp_if%_r$w8^j(3^)@cm-(+*y4hg0sc=2n@p=p&44u+g!(q^'
 
+debug = os.environ.get('DEBUG', 'true')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = debug == 'true'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['korde.no', 'ec2-52-210-231-149.eu-west-1.compute.amazonaws.com']
 
 # Application definition
 
@@ -211,15 +212,15 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
+database_host = os.environ.get('DATABASE_HOST', 'localhost')
+
 DATABASES = {
     'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': ''
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': database_host,
+        'PORT': 5432,
     }
 }
 
