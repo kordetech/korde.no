@@ -33,10 +33,6 @@ ALLOWED_HOSTS = ['korde.no', 'ec2-52-210-231-149.eu-west-1.compute.amazonaws.com
 
 # Application definition
 
-
-
-
-
 ROOT_URLCONF = 'korde.urls'
 
 # Internationalization
