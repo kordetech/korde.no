@@ -8,6 +8,7 @@ services:
   web:
     environment:
       - DATABASE_HOST=db
+      - DEBUG=false
     image: kordetech/korde.no:latest
     ports:
       - "8000:80"

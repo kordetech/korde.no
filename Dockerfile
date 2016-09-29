@@ -13,10 +13,15 @@ COPY supervisor-app.conf /etc/supervisor/conf.d/
 
 RUN mkdir /code
 WORKDIR /code
+
+RUN mkdir -p /media
+VOLUME ["/code/media/"]
+
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 
 COPY . /code/
+RUN python manage.py collectstatic --no-input
 
 EXPOSE 80
 CMD ["supervisord", "-n"]
