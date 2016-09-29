@@ -4,19 +4,19 @@ services:
     image: postgres
     volumes_from:
       - pg_data
+
   web:
     environment:
       - DATABASE_HOST=db
-    image: kordetech/korde.no
-    command: python manage.py runserver 0.0.0.0:8000
+    image: kordetech/korde.no:latest
     ports:
-      - "8000:8000"
+      - "8000:80"
     links:
       - db
   migration:
     environment:
       - DATABASE_HOST=db
-    image: kordetech/korde.no
+    image: kordetech/korde.no:latest
     command: python manage.py migrate
   pg_data:
     image: kordetech/pg_data
