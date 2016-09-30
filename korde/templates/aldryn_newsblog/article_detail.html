@@ -7,10 +7,6 @@
 
 {% block content %}
     <style>
-        p {
-            font-size: 1.4em;
-        }
-
         #header, #author {
             background-size: cover;
         }
@@ -21,7 +17,7 @@
             <div class="card bg-light">
                 <div>
                     {% thumbnail article.featured_image 0x1000 crop subject_location=article.featured_image.subject_location as thumb %}
-                    <div class="w-100-p h-500 p-l-20-20" id="header" style="background-image: url({{ thumb.url }})">
+                    <div class="w-100-p h-400 p-l-20-20" id="header" style="background-image: url({{ thumb.url }})">
                         <a href="{% namespace_url "article-list" %}">
                             <button class="btn-md btn-red rounded-3">
                                 <span class="fa fa-caret-left m-l-0-10 m-right"></span>
@@ -32,7 +28,11 @@
                     {% thumbnail article.author.visual 150x150 crop subject_location=article.author.visual.subject_location as author_thumb %}
                     <div style="background-image: url({{ author_thumb.url }})" id="author" class="round round-md border-8 border-light right-shadow author"></div>
                 </div>
-                <div class="p-l-80-60">
+                <div class="row p-l-80-60 p-top">
+                    <div class="row"><p>{{ article.author.name }}</p></div>
+                    <div class="row"><p>{{ article.publishing_date|date:"d F, Y" }}</p></div>
+                </div>
+                <div class="p-l-0-60">
                     <h1>{% render_model article "title" %}</h1>
                     <div>
                         <i>{% render_model article "lead_in" %}</i>

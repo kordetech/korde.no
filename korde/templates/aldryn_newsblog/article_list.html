@@ -7,18 +7,31 @@
     {% placeholder 'header-background' %}
 {% endwith %}
 
-    <div class="row row-center row-center-v cover-6 cover-black p-l-20-20 h-600 bg-image" style="background-image: url({{ article_list.0.featured_image.url  }})">
+    {% if article_list.0 %}
+    <div id class="row row-center row-center-v cover-6 cover-black p-l-20-20 h-600 bg-image" style="background-image: url({{ article_list.0.featured_image.url  }})">
         <a href="{{ article_list.0.get_absolute_url }}">
             <div class="w-600 t-center color-light border-9 border-light p-l-40-40 header-container">
                 <div class="row row-center p-l-20-0">
                     <div class="c-m-12">
                         <h4 class="t-upper t-300">Siste innlegg:</h4>
-                        <h1 class="t-300">{% render_model article_list.0 "title" %}</h1>
+                        <h1 class="t-300">{% render_model article_list.0 "title" "" "" "striptags" %}</h1>
                     </div>
                 </div>
             </div>
         </a>
     </div>
+    {% else %}
+    <div id="header" class="row row-center row-center-v cover-6 cover-black p-l-20-20 h-600 bg-image">
+        <div class="w-600 t-center color-light border-9 border-light p-l-40-40 header-container">
+            <div class="row row-center p-l-20-0">
+                <div class="c-m-12">
+                    <h4 class="t-upper t-300">Siste innlegg:</h4>
+                    <h1 class="t-300">Ingen innlegg :(</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
 
     <div class="row row-center bg-stable-light border-b-1 border-stable p-l-40-20">
         <div class="w-1200">
@@ -31,8 +44,9 @@
                             </div>
                             <div class="p-l-20-20 border-b-1 border-stable">
                                 <h5>{% render_model article "title" %}</h5>
-                                <p class="m-l-20-0 m-bottom"><small>Skrevet av: {{ article.author.name }}</small></p>
-                                <p class="fs-12">{% render_model article "lead_in" %}</p>
+                                <p><small>Skrevet av: {{ article.author.name }}</small></p>
+                                <p class="m-l-20-0 m-bottom"><small>Publisert: {{ article.publishing_date|date:"F d, Y" }}</small></p>
+                                <p class="fs-12">{% render_model article "lead_in" "" "" "truncatewords:'30'|striptags" %}</p>
                             </div>
                             <div class="p-l-15-10 t-center fs-14">
                                 <span class="fa fa-facebook m-l-0-20 color-stable social-hover"></span>
