@@ -2,6 +2,11 @@
 {% load i18n apphooks_config_tags cms_tags sekizai_tags staticfiles thumbnail %}
 
 {% block content %}
+    <style>
+        .article-text {
+            height: 220px;
+        }
+    </style>
 
 {% with css_selector='#header' %}
     {% placeholder 'header-background' %}
@@ -42,7 +47,7 @@
                             <div id="blog-image" class="w-100-p h-150 bg-image">
                                 <img width="380" height="150" src="{% thumbnail article.featured_image 760x300 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
                             </div>
-                            <div class="p-l-20-20 border-b-1 border-stable">
+                            <div class="article-text p-l-20-20 border-b-1 border-stable">
                                 <h5>{% render_model article "title" %}</h5>
                                 <p><small>Skrevet av: {{ article.author.name }}</small></p>
                                 <p class="m-l-20-0 m-bottom"><small>Publisert: {{ article.publishing_date|date:"F d, Y" }}</small></p>
@@ -61,7 +66,5 @@
             </div>
         </div>
     </div>
-
-    {% include "aldryn_newsblog/includes/pagination.html" %}
 
 {% endblock content %}
