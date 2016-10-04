@@ -12,10 +12,6 @@
     {% endwith %}
 
     <style>
-        p {
-            font-size: 1.4em;
-        }
-
         #header, #author {
             background-size: cover;
         }
@@ -26,10 +22,12 @@
             <div class="card bg-light">
                 <div>
                     <div class="w-100-p h-500 p-l-20-20" id="header">
-                        <button class="btn-md btn-red rounded-3">
-                            <span class="fa fa-caret-left m-l-0-10 m-right"></span>
-                            <span>Tilbake</span>
-                        </button>
+                        <a href="{% page_url "customers" %}">
+                            <button class="btn-md btn-red rounded-3">
+                                <span class="fa fa-caret-left m-l-0-10 m-right"></span>
+                                <span>Tilbake</span>
+                            </button>
+                        </a>
                     </div>
                     <div id="author" class="round round-md border-8 border-light right-shadow author"></div>
                 </div>
