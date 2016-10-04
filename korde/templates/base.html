@@ -8,13 +8,6 @@
     <title>{% block title %}Korde{% endblock title %}</title>
     {% render_block "css" %}
 
-    <meta property="og:url"
-          content="http://www.korde.no"/>
-    <meta property="og:title" content="Korde"/>
-    <meta property="og:description"
-          content="Korde er et digitalt studio som skaper og utvikler produkter for både startups og etablerte selskaper. Gjennom egne idéer og prosjekter holder vi oss alltid oppdatert på den nyeste teknologien og leverer nyskapende digitale plattformer for våre kunder."/>
-    <meta property="og:image"
-          content="http://www.korde.no/static/img/logo/korde_square.png"/>
     <!-- iPhone app setup-->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -36,6 +29,14 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.min.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/localmain.css' %}"/>
+
+    <meta property="og:url"
+      content="{% block fb_site_url %}{{ request.build_absolute_uri }}{% endblock %}"/>
+    <meta property="og:title" content="{% block fb_title %}Korde{% endblock %}"/>
+    <meta property="og:description"
+          content="{% block fb_description %}Korde er et digitalt studio som skaper og utvikler produkter for både startups og etablerte selskaper. Gjennom egne idéer og prosjekter holder vi oss alltid oppdatert på den nyeste teknologien og leverer nyskapende digitale plattformer for våre kunder.{% endblock %}"/>
+    <meta property="og:image"
+      content="{% block fb_image %}http://www.korde.no/static/img/logo/korde_square.png{% endblock %}"/>
 </head>
 <body>
 {% cms_toolbar %}
@@ -76,9 +77,5 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 </body>
 </html>

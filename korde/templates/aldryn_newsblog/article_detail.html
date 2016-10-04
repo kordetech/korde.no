@@ -5,6 +5,10 @@
     {{ article.title }} - {{ block.super }}
 {% endblock %}
 
+{% block fb_title %}{{ article.title }} - {{ block.super }}{% endblock %}
+{% block fb_description %}{{ article.lead_in }}{% endblock %}
+{% block fb_image %}{{ request.META.HTTP_HOST }}{{ article.featured_image.url }}{% endblock %}
+
 {% block content %}
     <style>
         #header, #author {
@@ -31,6 +35,10 @@
                 <div class="row p-l-80-60 p-top">
                     <div class="row"><p>{{ article.author.name }}</p></div>
                     <div class="row"><p>{{ article.publishing_date|date:"d F, Y" }}</p></div>
+                    <div class="fb-share-button"
+                        data-href="{{ request.build_absolute_uri }}"
+                        data-layout="button_count">
+                    </div>
                 </div>
                 <div class="p-l-0-60">
                     <h1>{% render_model article "title" %}</h1>
